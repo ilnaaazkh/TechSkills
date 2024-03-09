@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace SkillTech.API.Controllers
+namespace TechSkills.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

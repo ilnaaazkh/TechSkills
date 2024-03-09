@@ -1,4 +1,4 @@
-namespace SkillTech.API
+namespace TechSkills.API
 {
     public class WeatherForecast
     {
