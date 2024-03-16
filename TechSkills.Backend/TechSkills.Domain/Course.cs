@@ -3,6 +3,7 @@
     public class Course
     {
         Guid Guid { get; }
+
         public string Title { get; }
 
         public string Description { get; }
