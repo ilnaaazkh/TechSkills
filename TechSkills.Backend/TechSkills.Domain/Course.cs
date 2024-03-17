@@ -2,7 +2,7 @@
 {
     public class Course
     {
-        Guid Guid { get; }
+        public Guid Id { get; }
 
         public string Title { get; }
 
@@ -13,12 +13,12 @@
 
         private Course(Guid guid, string title, string description)
         {
-            Guid = guid;
+            Id = guid;
             Title = title;
             Description = description;
         }
 
-        public static (Course course, string Error) Create(Guid guid, string title, string description)
+        public static (Course Course, string Error) Create(Guid guid, string title, string description)
         {
             var error = string.Empty;
 

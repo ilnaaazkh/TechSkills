@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TechSkills.Application\TechSkills.Application.csproj" />
     <ProjectReference Include="..\TechSkills.DataAccess\TechSkills.DataAccess.csproj" />
   </ItemGroup>
 
