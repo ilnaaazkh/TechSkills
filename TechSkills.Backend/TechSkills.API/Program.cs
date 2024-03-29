@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using TechSkills.Application;
 using TechSkills.Application.Services;
 using TechSkills.DataAccess;
 using TechSkills.DataAccess.Repositories;
@@ -16,8 +17,10 @@ builder.Services.AddDbContext<TechSkillsDbContext>(
         options.UseSqlServer(builder.Configuration.GetConnectionString(nameof(TechSkillsDbContext)));
     });
 
-builder.Services.AddScoped<ICourseService, CourseService>();
-builder.Services.AddScoped<ICoursesRepository, CoursesRepository>();
+
+builder.Services     //Adding dependencies from layers
+    .AddDataAccess()
+    .AddApplication();
 
 var app = builder.Build();
 
