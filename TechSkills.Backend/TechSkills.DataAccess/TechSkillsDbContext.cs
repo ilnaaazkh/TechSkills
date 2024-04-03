@@ -7,6 +7,8 @@ namespace TechSkills.DataAccess
     public class TechSkillsDbContext : DbContext
     {
         public DbSet<CourseEntity> Courses { get; set; }
+        public DbSet<ModuleEntity> Modules { get; set; }
+
         public TechSkillsDbContext(DbContextOptions<TechSkillsDbContext> options)
            : base(options)
         {

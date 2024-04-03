@@ -1,10 +1,13 @@
 ﻿namespace TechSkills.DataAccess.Entities
 {
-    public class CourseEntity
+    public class ModuleEntity
     {
         public Guid Id { get; set; }
+
         public string Title { get; set; }
-        public string Description { get; set; } 
-        public List<ModuleEntity> Modules { get; set; }
+
+
+        public Guid CourseId { get; set; }
+        public CourseEntity Course { get; set; }
     }
 }
