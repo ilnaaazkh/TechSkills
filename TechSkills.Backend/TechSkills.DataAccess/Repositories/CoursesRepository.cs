@@ -20,7 +20,7 @@ namespace TechSkills.DataAccess.Repositories
                 .AsNoTracking()
                 .ToListAsync();
             var courses = courseEntities
-                .Select(x => Course.Create(Guid.NewGuid(), x.Title, x.Description).Value)
+                .Select(x => Course.Create(x.Id, x.Title, x.Description).Value)
                 .ToList();
 
             return courses;
