@@ -40,5 +40,30 @@ namespace TechSkills.API.Controllers
 
             return Ok(courseId);
         }
+
+        [HttpPut("{id:guid}")]
+        public async Task<ActionResult<Guid>> UpdateBooks(Guid id, [FromBody] CourseRequest request)
+        {
+            var updatedCourse = Course.Create(id,
+                request.Title,
+                request.Description);
+
+            if (updatedCourse.IsFailure)
+            {
+                return BadRequest(updatedCourse.Error);
+            }
+
+            var updatedCourseId = await coursesService.UpdateCourse(updatedCourse.Value);
+
+            return Ok(updatedCourseId);
+        } 
+
+        [HttpDelete("{id:guid}")]
+        public async Task<ActionResult<Guid>> DeleteCourse(Guid id)
+        {
+            var courseId = await coursesService.DeleteCourse(id);
+
+            return Ok(courseId);
+        }
     }
 }
