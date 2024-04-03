@@ -16,5 +16,21 @@ namespace TechSkills.Application.Services
         {
             return await coursesRepository.GetCourses();
         }
+
+        public async Task<Guid> CreateCourse(Course course)
+        {
+            return await coursesRepository.Create(course);
+        }
+
+        public async Task<Guid> UpdateCourse(Course course)
+        {
+            return await coursesRepository.Update(course);
+        }
+
+        public async Task<Guid> DeleteCourse(Guid CourseId)
+        {
+            return await coursesRepository.Delete(CourseId);
+        }
+
     }
 }
