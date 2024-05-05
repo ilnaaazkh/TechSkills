@@ -1,4 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
+using TechSkills.Domain.Enums;
 
 namespace TechSkills.Domain
 {
@@ -16,16 +17,18 @@ namespace TechSkills.Domain
         public Guid Id { get; }
         public string Title { get; }
         public string Description { get; }
+        public PublishState PublishState { get; }
         public IReadOnlyCollection<Module> Modules => modules;
         /*public IReadOnlyCollection<User> Students => students;
         public IReadOnlyCollection<User> Authors => authors;*/
 
 
-        private Course(Guid guid, string title, string description)
+        private Course(Guid guid, string title, string description, PublishState publishState)
         {
             Id = guid;
             Title = title;
             Description = description;
+            PublishState = publishState;
         }
         public void AddModules(Module module)
         {
@@ -46,7 +49,7 @@ namespace TechSkills.Domain
             }
         }*/
 
-        public static Result<Course> Create(Guid guid, string title, string description)
+        public static Result<Course> Create(Guid guid, string title, string description, PublishState publishState = PublishState.Draft)
         {
             var error = string.Empty;
 
@@ -65,7 +68,7 @@ namespace TechSkills.Domain
                 return Result.Failure<Course>(error);
             }
 
-            var course = new Course(guid, title, description);
+            var course = new Course(guid, title, description, publishState);
 
             return Result.Success<Course>(course);
         }
