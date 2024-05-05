@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechSkills.DataAccess;
 
@@ -11,9 +12,11 @@ using TechSkills.DataAccess;
 namespace TechSkills.DataAccess.Migrations
 {
     [DbContext(typeof(TechSkillsDbContext))]
-    partial class TechSkillsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240505125754_LessonEntity")]
+    partial class LessonEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,9 +67,6 @@ namespace TechSkills.DataAccess.Migrations
                     b.Property<Guid>("ModuleId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("OrderNumber")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(30)
@@ -87,9 +87,6 @@ namespace TechSkills.DataAccess.Migrations
 
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("OrderNumber")
-                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechSkills.DataAccess;
 
@@ -11,9 +12,11 @@ using TechSkills.DataAccess;
 namespace TechSkills.DataAccess.Migrations
 {
     [DbContext(typeof(TechSkillsDbContext))]
-    partial class TechSkillsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240505120542_CoursePublishStatus")]
+    partial class CoursePublishStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,37 +51,6 @@ namespace TechSkills.DataAccess.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("TechSkills.DataAccess.Entities.LessonEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("LessonType")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("ModuleId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("OrderNumber")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ModuleId");
-
-                    b.ToTable("Lessons");
-                });
-
             modelBuilder.Entity("TechSkills.DataAccess.Entities.ModuleEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -88,30 +60,15 @@ namespace TechSkills.DataAccess.Migrations
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("OrderNumber")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CourseId");
 
                     b.ToTable("Modules");
-                });
-
-            modelBuilder.Entity("TechSkills.DataAccess.Entities.LessonEntity", b =>
-                {
-                    b.HasOne("TechSkills.DataAccess.Entities.ModuleEntity", "Module")
-                        .WithMany("Lessons")
-                        .HasForeignKey("ModuleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Module");
                 });
 
             modelBuilder.Entity("TechSkills.DataAccess.Entities.ModuleEntity", b =>
@@ -128,11 +85,6 @@ namespace TechSkills.DataAccess.Migrations
             modelBuilder.Entity("TechSkills.DataAccess.Entities.CourseEntity", b =>
                 {
                     b.Navigation("Modules");
-                });
-
-            modelBuilder.Entity("TechSkills.DataAccess.Entities.ModuleEntity", b =>
-                {
-                    b.Navigation("Lessons");
                 });
 #pragma warning restore 612, 618
         }

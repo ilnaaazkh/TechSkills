@@ -8,6 +8,7 @@ namespace TechSkills.DataAccess
     {
         public DbSet<CourseEntity> Courses { get; set; }
         public DbSet<ModuleEntity> Modules { get; set; }
+        public DbSet<LessonEntity> Lessons { get; set; }
 
         public TechSkillsDbContext(DbContextOptions<TechSkillsDbContext> options)
            : base(options)
@@ -16,7 +17,10 @@ namespace TechSkills.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CourseConfiguration());
+            modelBuilder
+                .ApplyConfiguration(new CourseConfiguration())
+                .ApplyConfiguration(new ModuleConfiguration())
+                .ApplyConfiguration(new LessonConfiguration());
         }
     }
 }
