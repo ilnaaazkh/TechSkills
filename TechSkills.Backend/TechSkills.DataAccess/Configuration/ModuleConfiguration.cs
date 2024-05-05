@@ -9,14 +9,14 @@ namespace TechSkills.DataAccess.Configuration
     {
         public void Configure(EntityTypeBuilder<ModuleEntity> builder)
         {
-            builder.HasKey(x => x.Id);
+            builder.HasKey(module => module.Id);
 
-            builder.Property(x => x.Title)
+            builder.Property(module => module.Title)
                 .IsRequired()
                 .HasMaxLength(Module.MODULE_TITLE_MAX_LENGTH);
 
-            builder
-                .HasOne(x => x.Course); //TODO: Configure this 
+            builder.HasMany(module => module.Lessons)
+                .WithOne(lesson => lesson.Module); 
         }
     }
 }

@@ -8,7 +8,7 @@ namespace TechSkills.DataAccess
     {
         public static IServiceCollection AddDataAccess(this IServiceCollection services)
         {
-            services.AddScoped<ICoursesRepository, CoursesRepository>(); //Scoped | Transient ?
+            services.AddScoped<ICoursesRepository, CoursesRepository>();
             return services;
         }
     }
