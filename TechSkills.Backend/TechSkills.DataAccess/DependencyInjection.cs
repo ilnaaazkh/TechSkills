@@ -9,6 +9,7 @@ namespace TechSkills.DataAccess
         public static IServiceCollection AddDataAccess(this IServiceCollection services)
         {
             services.AddScoped<ICoursesRepository, CoursesRepository>();
+            services.AddScoped<IModulesRepository, ModulesRepository>();
             return services;
         }
     }
