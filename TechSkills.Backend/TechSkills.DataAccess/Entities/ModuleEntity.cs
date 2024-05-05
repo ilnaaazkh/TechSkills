@@ -6,5 +6,7 @@
         public string Title { get; set; }
         public Guid CourseId { get; set; }
         public CourseEntity Course { get; set; }
+
+        public List<LessonEntity> Lessons { get; set; }
     }
 }

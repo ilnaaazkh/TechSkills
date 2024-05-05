@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Xml.Linq;
 using TechSkills.DataAccess.Entities;
 using TechSkills.Domain;
 
 namespace TechSkills.DataAccess.Configuration
 {
-    public class ModuleConfiguration : IEntityTypeConfiguration<ModuleEntity>
+	public class ModuleConfiguration : IEntityTypeConfiguration<ModuleEntity>
     {
         public void Configure(EntityTypeBuilder<ModuleEntity> builder)
         {
