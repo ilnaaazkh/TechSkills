@@ -15,6 +15,9 @@ namespace TechSkills.DataAccess.Configuration
                 .IsRequired()
                 .HasMaxLength(Module.MODULE_TITLE_MAX_LENGTH);
 
+            builder.Property(module => module.OrderNumber)
+                .IsRequired();
+
             builder.HasMany(module => module.Lessons)
                 .WithOne(lesson => lesson.Module); 
         }

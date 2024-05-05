@@ -19,6 +19,9 @@ namespace TechSkills.DataAccess.Configuration
 			builder.Property(lesson => lesson.Content)
 				.IsRequired();
 
+			builder.Property(lesson => lesson.OrderNumber)
+				.IsRequired();
+
 			builder.Property(lesson => lesson.LessonType)
 				.HasConversion<int>();
 		}
