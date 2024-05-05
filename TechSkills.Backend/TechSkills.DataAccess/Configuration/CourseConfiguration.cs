@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TechSkills.DataAccess.Entities;
+using TechSkills.DataAccess.Enums;
 using TechSkills.Domain;
 
 
@@ -19,6 +20,10 @@ namespace TechSkills.DataAccess.Configuration
             builder.Property(x => x.Description)
                 .IsRequired()
                 .HasMaxLength(Course.MAX_DESCRIPTION_LENGTH);
+
+            builder.Property(x => x.PublishState)
+                .HasConversion<int>()
+                .HasDefaultValue(PublishState.Draft);
         }
     }
 }
