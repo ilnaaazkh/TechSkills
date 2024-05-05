@@ -45,7 +45,7 @@ namespace TechSkills.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("TechSkills.DataAccess.Entities.LessonEntity", b =>
@@ -76,7 +76,7 @@ namespace TechSkills.DataAccess.Migrations
 
                     b.HasIndex("ModuleId");
 
-                    b.ToTable("Lessons");
+                    b.ToTable("Lessons", (string)null);
                 });
 
             modelBuilder.Entity("TechSkills.DataAccess.Entities.ModuleEntity", b =>
@@ -100,7 +100,7 @@ namespace TechSkills.DataAccess.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Modules");
+                    b.ToTable("Modules", (string)null);
                 });
 
             modelBuilder.Entity("TechSkills.DataAccess.Entities.LessonEntity", b =>
