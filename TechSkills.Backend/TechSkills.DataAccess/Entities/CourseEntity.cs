@@ -1,4 +1,4 @@
-﻿using TechSkills.DataAccess.Enums;
+﻿using TechSkills.Domain.Enums;
 
 namespace TechSkills.DataAccess.Entities
 {

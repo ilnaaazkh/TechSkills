@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TechSkills.DataAccess.Entities;
-using TechSkills.DataAccess.Enums;
 using TechSkills.Domain;
+using TechSkills.Domain.Enums;
 
 
 namespace TechSkills.DataAccess.Configuration
