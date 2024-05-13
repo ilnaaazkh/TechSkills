@@ -22,6 +22,16 @@ builder.Services     //Adding dependencies from layers
     .AddDataAccess()
     .AddApplication();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin();
+        policy.AllowAnyHeader();
+        policy.AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 
@@ -37,11 +47,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCors(x =>
-    {
-        x.WithHeaders().AllowAnyHeader();
-        x.WithOrigins("http://localhost:3000");
-        x.WithMethods().AllowAnyMethod();
-    });
+app.UseCors();
 
 app.Run();
