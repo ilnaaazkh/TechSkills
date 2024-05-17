@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +11,7 @@ body {
   margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .logo img {
@@ -23,9 +26,9 @@ body {
 }
 
 .main {
-  position: absolute; /* Добавляем абсолютное позиционирование */
-  top: 15%; /* Размещаем .main на 50% от верхней границы .container */
-  left: 0; /* Выравниваем .main по левому краю .container */
+  position: absolute;
+  top: 15%;
+  left: 0;
   width: 100%;
 }
 
@@ -49,9 +52,9 @@ body {
 }
 
 .separator {
-  border-left: 1px solid black; /* Цвет и толщина линии */
-  height: 20px; /* Высота линии */
-  margin: 0 20px; /* Расстояние между линией и соседними элементами */
+  border-left: 1px solid black;
+  height: 20px;
+  margin: 0 20px;
 }
 
 .inner {
@@ -77,8 +80,14 @@ body {
   border: 1px solid rgb(201, 201, 201);
 }
 
-.card_ {
+.card_title {
   margin: 10px;
+  font-weight: 600;
+}
+
+.card_description {
+  margin: 10px;
+  font-weight: 400;
 }
 
 .btnStartEducation {
@@ -93,7 +102,7 @@ body {
     #4568dc 100%
   );
   margin: 10px;
-  padding: 15px 65px;
+  padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -104,6 +113,7 @@ body {
   display: block;
   border: none;
   cursor: pointer;
+  width: 220px;
 }
 
 .btnStartEducation button:hover {
