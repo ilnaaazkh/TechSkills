@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.container {
+  color: black;
+  text-decoration: none;
+  position: relative;
+  height: 100vh;
+}
+
+.main {
+  position: absolute; /* Добавляем абсолютное позиционирование */
+  top: 15%; /* Размещаем .main на 50% от верхней границы .container */
+  left: 0; /* Выравниваем .main по левому краю .container */
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.registrationAndAutorization {
+  width: 16%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.registrationAndAutorization a {
+  color: rgb(58, 57, 57);
+  text-decoration: none;
+}
+
+.separator {
+  border-left: 1px solid black; /* Цвет и толщина линии */
+  height: 20px; /* Высота линии */
+  margin: 0 20px; /* Расстояние между линией и соседними элементами */
+}
+
+.inner {
+  display: grid;
+  margin: 0 auto;
+  width: 100%;
+  grid-gap: 2vw;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  position: relative;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px;
+  border: 1px solid rgb(201, 201, 201);
+}
+
+.card_ {
+  margin: 10px;
+}
+
+.btnStartEducation {
+  align-self: center;
+}
+
+.btnStartEducation button {
+  background-image: linear-gradient(
+    to right,
+    #4568dc 0%,
+    #b06ab3 51%,
+    #4568dc 100%
+  );
+  margin: 10px;
+  padding: 15px 65px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 25px;
+  display: block;
+  border: none;
+  cursor: pointer;
+}
+
+.btnStartEducation button:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}

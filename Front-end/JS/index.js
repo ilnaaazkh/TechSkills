@@ -1,4 +1,4 @@
-innerConntainer = document.getElementsByClassName("inner");
+innerConntainer = document.getElementById("inner");
 
 async function getAllCourses() {
   try {
@@ -19,9 +19,14 @@ async function getAllCourses() {
 function createCardsWithCourses(courses) {
   courses.forEach((course) => {
     const card = `    
-    <div class="card">
-        <div class="card__">${course.title}</div>
-        <div class="card__">${course.description}</div>
+     <div class="card">
+      <div class="card-content">
+        <div class="card_">${course.title}</div>
+        <div class="card_">${course.description}</div>
+      </div>
+      <div class="btnStartEducation">
+        <button>Начать учиться</button>
+      </div>
     </div>`;
     innerConntainer.insertAdjacentHTML("beforeend", card);
   });
