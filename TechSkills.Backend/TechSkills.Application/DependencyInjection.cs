@@ -8,7 +8,8 @@ namespace TechSkills.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddScoped<ICourseService, CourseService>(); // Scoped | Transient ?
+            services.AddScoped<ICourseService, CourseService>();
+            services.AddScoped<IModuleService, ModuleService>();
 
             return services;
         }
