@@ -16,7 +16,6 @@ namespace TechSkills.DataAccess.Repositories
         public async Task<List<Module>> getModulesByCourseId(Guid courseId)
         {
             var moduleEntities = await _context.Modules
-                .Include(module => module.CourseId)
                 .Where(module => module.CourseId == courseId)
                 .AsNoTracking() 
                 .ToListAsync();
