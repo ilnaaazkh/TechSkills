@@ -1,4 +1,4 @@
-﻿namespace TechSkills.API.Contracts.RequestContracts
+﻿namespace TechSkills.API.Contracts.Requests
 {
     public record CourseRequest(
         string Title,

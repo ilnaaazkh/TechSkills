@@ -1,9 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TechSkills.Application;
-using TechSkills.Application.Services;
 using TechSkills.DataAccess;
-using TechSkills.DataAccess.Repositories;
-using TechSkills.Domain.Abstractions;
 
 var builder = WebApplication.CreateBuilder(args);
 

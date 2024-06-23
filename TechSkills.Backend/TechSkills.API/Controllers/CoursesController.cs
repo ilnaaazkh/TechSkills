@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TechSkills.API.Contracts;
+using TechSkills.API.Contracts.Requests;
+using TechSkills.API.Contracts.Responses;
 using TechSkills.Domain.Abstractions;
 using TechSkills.Domain;
 

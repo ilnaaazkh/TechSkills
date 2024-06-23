@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TechSkills.API.Contracts;
+using TechSkills.API.Contracts.Requests;
+using TechSkills.API.Contracts.Responses;
 using TechSkills.Domain;
 using TechSkills.Domain.Abstractions;
 
@@ -25,21 +26,6 @@ namespace TechSkills.API.Controllers
 			var response = modules.Select(module => new ModuleResponse(module.Id, module.Title));
 
 			return Ok(response);
-		}
-
-		[HttpPost]
-		public async Task<ActionResult<Guid>> CreateModule([FromBody] ModuleRequest request, Guid courseId)
-		{
-			/*var module = Module.Create(Guid.NewGuid(), request.Title, request.OrderNumber);
-
-			if (module.IsFailure)
-			{
-				return BadRequest(module.Error);
-			}
-
-			var moduleId = await moduleService.CreateModule(module.Value, Guid courseId);*/
-
-			return Ok();
 		}
 	}
 }

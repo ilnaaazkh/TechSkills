@@ -1,4 +1,4 @@
-﻿namespace TechSkills.API.Contracts.ResponseContracts
+﻿namespace TechSkills.API.Contracts.Responses
 {
     public record ModuleResponse(
         Guid ModuleId,
