@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using TechSkills.API.Extensions;
 using TechSkills.Application;
 using TechSkills.DataAccess;
 
@@ -24,7 +25,7 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddDbContext<TechSkillsDbContext>(
     options =>
     {
-        options.UseSqlServer(builder.Configuration.GetConnectionString(nameof(TechSkillsDbContext)));
+        options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(TechSkillsDbContext)));
     });
 
 
@@ -49,6 +50,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.ApplyMigrations();
 }
 
 app.UseHttpsRedirection();
