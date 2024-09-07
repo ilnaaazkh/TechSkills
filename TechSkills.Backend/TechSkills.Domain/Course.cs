@@ -10,8 +10,7 @@ namespace TechSkills.Domain
 
 
         private readonly List<Module> modules = new List<Module>();
-        /*private readonly List<User> students = new List<User>();
-        private readonly List<User> authors = new List<User>();*/
+       
 
 
         public Guid Id { get; }
@@ -19,8 +18,7 @@ namespace TechSkills.Domain
         public string Description { get; }
         public PublishState PublishState { get; }
         public IReadOnlyCollection<Module> Modules => modules;
-        /*public IReadOnlyCollection<User> Students => students;
-        public IReadOnlyCollection<User> Authors => authors;*/
+        
 
 
         private Course(Guid guid, string title, string description, PublishState publishState)
@@ -34,20 +32,6 @@ namespace TechSkills.Domain
         {
             modules.Add(module);
         }
-        /*public void AddAuthors(IEnumerable<User> newAuthors)
-        {
-            foreach (var author in newAuthors)
-            {
-                authors.Add(author);
-            }
-        }*/
-        /*public void AddStudents(IEnumerable<User> newStudents)
-        {
-            foreach (var student in newStudents)
-            {
-                students.Add(student);
-            }
-        }*/
 
         public static Result<Course> Create(Guid guid, string title, string description, PublishState publishState = PublishState.Draft)
         {

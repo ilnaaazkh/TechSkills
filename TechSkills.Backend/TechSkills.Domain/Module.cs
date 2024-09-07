@@ -42,10 +42,5 @@ namespace TechSkills.Domain
 
             return Result.Success<Module>(module);
         }
-
-        public void AddLesson(Lesson lesson)
-        {
-            lessons.Add(lesson);
-        }
     }
 }
