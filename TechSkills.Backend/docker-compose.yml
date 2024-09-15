@@ -7,9 +7,22 @@ services:
       context: .
       dockerfile: TechSkills.API/Dockerfile
     depends_on:
-        - database
-  database: 
-    container_name: courses_db
+        - techskills.database
+
+
+  techskills.seq:
+    container_name: techskills-seq
+    image: datalust/seq:2024
+    environment:
+        - ACCEPT_EULA=Y  
+    ports:
+        - "5341:5341"
+        - "8081:80" 
+    
+
+
+  techskills.database: 
+    container_name: techskills-database
     image: postgres:16
     environment:
         - POSTGRES_PASSWORD=s3cret_passWord
